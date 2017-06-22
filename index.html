@@ -1,0 +1,119 @@
+<!-- JQuery Practice Exercise -->
+<!--  
+ one page
+ 10 elements
+ use jQuery to animate the elements (use 5 effects)
+ at least 3 different events handlers
+ upload your solution onGithub and submit the URL 
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Practice Exercise</title>
+	<style>
+	p {
+    display: block;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+</style>
+</head>
+<body>
+
+<h1>Learn more about how jQuery works</h1>
+
+	<ol style="float: left; min-width: 200px;">					
+		<li>Home</li>					
+		<li id="clickme1">What is jQuery?</li>		
+		<li id="clickme2">Animate elements</li>
+		<li id="clickme3">Handle events</li>
+	</ol>
+
+	<img id="angrycat" src="https://convertintowordpress.com/wp-content/uploads/2015/12/jquery_paging_table_example_code.png" width="250px" height="150px" style="float: left;"/>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+<div id="part1" style="display: none;">
+	<h2 style="padding-bottom: 0px; margin-bottom: 0px;">What is jQuery?</h2>
+	<p style= "padding-top:0px; margin-bottom: 0px;">jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML. It is free, open-source software using the permissive MIT license. Web analysis indicates that it is the most widely deployed JavaScript library by a large margin.
+	jQuery's syntax is designed to make it easier to navigate a document, select DOM elements, create animations, handle events, and develop Ajax applications.</p>
+</div>
+
+<div id="part2" style="display: none;" >
+	<h2 style= "padding-top:0px; margin-bottom: 0px;">Animate elements</h2>
+	<p style= "padding-top:0px; margin-bottom: 0px;">The jQuery library provides several techniques for adding animation to a web page. These include simple, standard animations that are frequently used, and the ability to craft sophisticated custom effects. with handler events you can animate the different elements on your webpage. 
+  	</p>
+</div>
+
+<div id="part3" style="display: none">
+	<h2 style="padding-bottom: 0px; margin-bottom: 0px;">Handler events</h2>
+	<p style= "padding-top:0px; margin-bottom: 0px;">Events are methods that are used to register behaviors to take effect when the user interacts with the browser, and to further manipulate those registered behaviors.
+	<br>
+	An example of an event is  Click(). The click event is sent to an element when the mouse pointer is on the element, and the mouse button is pressed and released. Any HTML element can receive this event. Click on the text of any of the paragraphs, the navigator bar or the main heading to see what event "click" can do together with and edded.
+	<br>
+	With the .hover() method you can binds handlers for both mouseenter and mouseleave events. You can use it to simply apply behavior to an element during the time the mouse is within the element. go over the navigator bar to see what hover does.
+	<br>
+	The contextmenu event is sent to an element when the right button of the mouse is clicked on it, but before the context menu is displayed. In case the context menu key is pressed, the event is triggered on the html element. Any HTML element can receive this event. right click on the jQuery image to see what contextmenu() can do.
+
+	</p>
+</div>
+
+<!-- <form>
+  <input id="target" type="text" value="Field 1">
+  <input type="text" value="Field 2">
+</form> -->
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){ 
+
+		$("p").click(function(){
+			$("p").text("you clicked on the paragraph text");	
+			$("h2").hide();							 
+		})
+
+	$( "#target" ).blur(function() {
+  alert( "Handler for .blur() called." );
+	})
+	$( "li" ).hover(function() {
+	  $( this ).fadeOut( 100 );
+	  $( this ).fadeIn( 500 );
+	});
+
+	$("img").contextmenu(function() {
+  	$( "img" ).fadeOut( "slow", function() {
+	  }); 
+	});
+
+	$("#clickme1").click(function() {
+	  $("#part1").slideDown("slow", function(){
+	  		});
+	});
+	$("#clickme2").click(function() {
+	  $("#part2").slideDown("slow", function(){
+	  		});
+	});
+	$("#clickme3").click(function() {
+	  $("#part3").slideDown("slow", function(){
+	  		});
+	});
+	$("h1").click(function() {
+  $("h1").slideUp( 400 ).delay( 600 ).fadeIn( 600 );
+});
+});
+
+</script>
+</body>
+</html>
